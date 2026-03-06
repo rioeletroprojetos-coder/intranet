@@ -83,3 +83,41 @@
 }
 
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+.rio-header {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Imagem aérea do Rio que geralmente pega esses 3 pontos */
+    background: url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?q=80&w=2000') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Efeito Parallax moderno */
+}
+
+.rio-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 51, 153, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.rio-header .content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Efeito de rolagem automática para o preview HTML */
+.scroll-anim {
+    height: 1200px;
+    animation: previewScroll 20s linear infinite alternate;
+}
+
+@keyframes previewScroll {
+    0% { transform: translateY(0) scale(0.9); }
+    100% { transform: translateY(-60%) scale(0.9); }
+}
