@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rio Eletro | Intranet</title>
+    <title>Rio Eletro | Intranet de Treinamentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50">
 
     <header class="rio-header">
-        <div class="overlay"></div>
         <div class="content">
             <h1 class="text-4xl md:text-6xl font-black mb-4">RIO ELETRO</h1>
             <p class="text-lg md:text-2xl font-light mb-8">Treinamentos e Capacitação Técnica</p>
@@ -25,9 +24,9 @@
     </header>
 
     <main class="container mx-auto px-6 py-12">
-        <div id="loading" class="text-center py-10">
+        <div id="loading" class="text-center py-20">
             <div class="spinner"></div>
-            <p class="mt-4 text-slate-500">Carregando treinamentos...</p>
+            <p class="mt-4 text-slate-500 font-medium">Buscando treinamentos atualizados...</p>
         </div>
         
         <div id="trainingGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
