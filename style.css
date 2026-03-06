@@ -1,0 +1,85 @@
+/* Header com imagem do Rio (Cristo, Pão de Açúcar, Maracanã) */
+.rio-header {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.rio-header .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 82, 204, 0.6), rgba(0, 0, 0, 0.8));
+}
+
+.rio-header .content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Barra de busca moderna */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 18px 30px;
+    border-radius: 50px;
+    border: none;
+    color: #333;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.search-container i {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0052cc;
+    font-size: 1.2rem;
+}
+
+/* Efeito de Scroll no Card HTML */
+.preview-window {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+}
+
+.scroll-anim {
+    width: 100%;
+    height: 1000px; /* Altura simulada maior para o scroll */
+    animation: autoScroll 15s linear infinite alternate;
+}
+
+@keyframes autoScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-70%); }
+}
+
+/* Spinner de carregamento */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0052cc;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
