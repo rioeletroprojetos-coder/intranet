@@ -121,3 +121,65 @@
     0% { transform: translateY(0) scale(0.9); }
     100% { transform: translateY(-60%) scale(0.9); }
 }
+
+
+/* Card com aspecto de "Vidro" e Profundidade */
+.training-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.training-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Container da Capa */
+.card-cover {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #f8fafc;
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Estilização para o Canvas do PDF */
+.pdf-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilização para o Preview HTML */
+.html-preview-container {
+    width: 100%;
+    height: 100%;
+    zoom: 0.5; /* Reduz o conteúdo para caber como capa */
+    -moz-transform: scale(0.5);
+    -moz-transform-origin: 0 0;
+}
+
+.html-iframe {
+    width: 200%; /* Compensa o zoom de 0.5 */
+    height: 1000px;
+    border: none;
+    pointer-events: none; /* Não permite interagir na capa, apenas no botão */
+    animation: autoScroll 25s linear infinite alternate;
+}
+
+@keyframes autoScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+/* Gradiente de sobreposição para o título ler bem */
+.cover-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.03));
+}
