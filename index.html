@@ -3,79 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rio Eletro - Intranet de Treinamentos</title>
+    <title>Rio Eletro | Intranet</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        .card-preview-html {
-            animation: scrollPreview 10s infinite alternate linear;
-        }
-        @keyframes scrollPreview {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-slate-50">
 
-    <header class="hero-gradient h-80 flex flex-col items-center justify-center text-white text-center px-4">
-        <h1 class="text-5xl font-bold mb-2">Seja bem-vindo à Rio Eletro</h1>
-        <p class="text-xl opacity-90">Sua central de treinamentos e conhecimento</p>
-        
-        <div class="mt-8 w-full max-w-2xl relative">
-            <input type="text" id="searchInput" placeholder="Pesquisar treinamento (ex: Segurança, Instalação...)" 
-                   class="w-full p-4 rounded-full text-gray-800 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <i class="fa-solid fa-magnifying-glass absolute right-5 top-5 text-gray-400"></i>
+    <header class="rio-header">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1 class="text-4xl md:text-6xl font-black mb-4">RIO ELETRO</h1>
+            <p class="text-lg md:text-2xl font-light mb-8">Treinamentos e Capacitação Técnica</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="O que você deseja aprender hoje?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto py-12 px-4">
-        <div id="trainingGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 training-card" data-name="Segurança do Trabalho">
-                <div class="h-48 bg-gray-200 relative overflow-hidden">
-                    <img src="caminho/para/capa-pdf.jpg" alt="Capa PDF" class="w-full h-full object-cover">
-                    <span class="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded">PDF</span>
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2">Segurança do Trabalho</h3>
-                    <a href="treinamento/seguranca.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline">Acessar Documento →</a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300 training-card" data-name="Introdução Elétrica">
-                <div class="h-48 bg-gray-100 relative overflow-hidden group">
-                    <div class="card-preview-html">
-                        <iframe src="treinamento/intro-eletrica/index.html" class="w-full h-[600px] pointer-events-none scale-75 origin-top"></iframe>
-                    </div>
-                    <span class="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded">Interativo</span>
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2">Introdução Elétrica</h3>
-                    <a href="treinamento/intro-eletrica/index.html" class="text-blue-600 font-semibold hover:underline">Iniciar Treinamento →</a>
-                </div>
-            </div>
-
+    <main class="container mx-auto px-6 py-12">
+        <div id="loading" class="text-center py-10">
+            <div class="spinner"></div>
+            <p class="mt-4 text-slate-500">Carregando treinamentos...</p>
         </div>
+        
+        <div id="trainingGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            </div>
     </main>
 
-    <script>
-        // Lógica de Busca Simples
-        const searchInput = document.getElementById('searchInput');
-        const cards = document.querySelectorAll('.training-card');
-
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            cards.forEach(card => {
-                const name = card.getAttribute('data-name').toLowerCase();
-                card.style.display = name.includes(term) ? 'block' : 'none';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
